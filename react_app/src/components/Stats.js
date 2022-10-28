@@ -537,7 +537,7 @@ const Stats = React.memo((p) => {
 
     }
 
-    const GetNames = async (e) => {
+    const getNames = async (e) => {
         let fetchallNames
         let urlnames = "https://wardennavy.com/data/stats/allnames"
         if (memory.allnames == undefined) {
@@ -550,7 +550,7 @@ const Stats = React.memo((p) => {
 
     }
 
-    const FindNames = async (e) => {
+    const findNames = async (e) => {
         let userInput = new RegExp(e.target.value, "gi")
         let matches = []
 
@@ -623,7 +623,7 @@ const Stats = React.memo((p) => {
                         <PlayersPD timespa={timesp} war={warCounter} />
                         <div className="search_bar">
                             <div className="look_glass"></div>
-                            <input id="Input_field" onKeyUp={FindNames} onClick={GetNames} className="search_input" type="text" placeholder="Search Name.." />
+                            <input id="Input_field" onKeyUp={findNames} onClick={getNames} className="search_input" type="text" placeholder="Search Name.." />
                             <div className="x_cancel"><p onClick={clearInput} style={{ margin: "0px", cursor: "context-menu" }}>x</p></div>
                         </div>
                         {names ? <Names nameslist={names} getPlayer={getPlayer} /> : null}
