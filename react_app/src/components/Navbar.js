@@ -4,14 +4,12 @@ import { useState, useEffect } from 'react'
 
 
 function Navb(p) {
-  console.log("Navbar")
   const [isActiveStats, setActiveStats] = useState(false);
   const [isActiveRecruit, setActiveRecruit] = useState(false);
   const [isActiveApplic, setActiveApplic] = useState(false);
   const [isActiveTime, setActiveTime] = useState(false);
 
   const toggleClass = (e) => {
-    console.log(e, "clicking")
     if (e == 'Stats') {
       setActiveStats(true)
       setActiveRecruit(false)
