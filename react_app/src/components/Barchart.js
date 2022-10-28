@@ -1,13 +1,13 @@
 
 import React from "react"
-import '../index.css'
-import { Bar } from "react-chartjs-2"
+import '../index.css';
+import { Bar } from "react-chartjs-2";
 
 export const BarChart = React.memo(({ chartData }) => {
-  
+
   return (
-    <div className="graphschart" style={{  borderRadius: "5px", marginBottom: "8px"}}>
-      <Bar 
+    <div className="graphschart" style={{ borderRadius: "5px", marginBottom: "8px" }}>
+      <Bar
         data={chartData}
         options={{
           categoryPercentage: 0.8,
@@ -34,8 +34,6 @@ export const BarChart = React.memo(({ chartData }) => {
             },
             legend: {
               display: false,
-              // color: "#dddddd",
-              // position: "bottom"
             }
           }
         }}
