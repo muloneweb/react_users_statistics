@@ -17,28 +17,15 @@ function App(p) {
   const [login, setLogin] = useState();
   const [clickEvent, setClickEvent] = useState(click);
 
-  function triggerLogin() {
-    setLogin(true)
-  }
-
-  if (document.cookie == "") {
-
-    useEffect(() => {
-      const logDiv = async () => {
-        triggerLogin()
-      }
-      logDiv()
-    }, [])
-
-  } else {
-
-    if (click.once == 0) {
+  useEffect(() => {
+    if (document.cookie == "") {
+      setTab(true)
+    } else  {
       click.once = 1
+      setTab(false)
       setClickEvent(click)
-      setLogin(false)
-    }
-
   }
+  }, [])
 
   let stats = (e) => {
     click.once = 1
